@@ -1,0 +1,15 @@
+/* Antonio (variable, 400 to 700) and Share Tech Mono. SIL Open Font License 1.1. Latin subset from Google Fonts, bundled so the game looks right offline. */
+@font-face {
+  font-family: 'Antonio';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("Antonio.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Share Tech Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("ShareTechMono.woff2") format('woff2');
+}

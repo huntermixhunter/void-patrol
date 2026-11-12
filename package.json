@@ -1,0 +1,88 @@
+{
+  "name": "void-patrol",
+  "productName": "Void Patrol",
+  "version": "1.0.0",
+  "description": "A free-roaming space arcade shooter. Hunt six-cannon fortresses, survive dreadnoughts, and upgrade your ship between sectors.",
+  "author": "Hunter Mix",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/huntermixhunter/void-patrol",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/huntermixhunter/void-patrol.git"
+  },
+  "main": "desktop/main.js",
+  "scripts": {
+    "start": "electron .",
+    "web": "node tools/serve.mjs",
+    "test": "node --test tests/test_engine.mjs",
+    "smoke": "node tools/smoke.mjs",
+    "dist": "electron-builder --publish never",
+    "dist:win": "electron-builder --win --publish never",
+    "dist:mac": "electron-builder --mac --publish never",
+    "dist:linux": "electron-builder --linux --publish never"
+  },
+  "build": {
+    "appId": "com.huntermix.voidpatrol",
+    "productName": "Void Patrol",
+    "copyright": "Copyright 2026 Hunter Mix",
+    "directories": {
+      "buildResources": "build-resources",
+      "output": "dist"
+    },
+    "files": [
+      "desktop/**",
+      "game/**",
+      "package.json"
+    ],
+    "afterPack": "desktop/adhoc-sign.js",
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build-resources/icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Void Patrol",
+      "runAfterFinish": true,
+      "deleteAppDataOnUninstall": false,
+      "artifactName": "VoidPatrol-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "VoidPatrol-${version}-Portable.${ext}"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "universal"
+          ]
+        }
+      ],
+      "category": "public.app-category.arcade-games",
+      "icon": "build-resources/icon.png",
+      "identity": null,
+      "artifactName": "VoidPatrol-${version}-mac.${ext}"
+    },
+    "dmg": {
+      "title": "Void Patrol"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Game",
+      "icon": "build-resources/icon.png",
+      "artifactName": "VoidPatrol-${version}-linux.${ext}"
+    }
+  },
+  "devDependencies": {
+    "electron": "^45.3.1",
+    "electron-builder": "^26.18.0"
+  }
+}
