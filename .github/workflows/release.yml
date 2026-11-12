@@ -33,6 +33,9 @@ jobs:
         run: npx electron-builder ${{ matrix.target }} --publish never
         env:
           CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - name: Smoke test the packaged Windows app
+        if: runner.os == 'Windows'
+        run: node tools/smoke.mjs "dist/win-unpacked/Void Patrol.exe"
       - uses: actions/upload-artifact@v4
         with:
           name: void-patrol-${{ matrix.os }}

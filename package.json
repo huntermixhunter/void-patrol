@@ -35,6 +35,7 @@
       "package.json"
     ],
     "afterPack": "desktop/adhoc-sign.js",
+    "electronLanguages": ["en-US"],
     "win": {
       "target": [
         "nsis",
