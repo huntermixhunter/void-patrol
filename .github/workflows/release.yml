@@ -65,7 +65,7 @@ jobs:
 
             **Windows, no install:** the `Portable.exe` runs straight from wherever you save it.
 
-            **Mac:** open the `.dmg` and drag Void Patrol to Applications. The first time, open it, then go to System Settings > Privacy & Security and click **Open Anyway**.
+            **Mac:** pick `mac-arm64.dmg` for M1 or newer, `mac-x64.dmg` for Intel. Open it and drag Void Patrol to Applications. The first time, open it, then go to System Settings > Privacy & Security and click **Open Anyway**.
 
             **Linux:** mark the `.AppImage` executable and run it.
 

@@ -35,7 +35,9 @@
       "package.json"
     ],
     "afterPack": "desktop/adhoc-sign.js",
-    "electronLanguages": ["en-US"],
+    "electronLanguages": [
+      "en-US"
+    ],
     "win": {
       "target": [
         "nsis",
@@ -61,14 +63,15 @@
         {
           "target": "dmg",
           "arch": [
-            "universal"
+            "arm64",
+            "x64"
           ]
         }
       ],
       "category": "public.app-category.arcade-games",
       "icon": "build-resources/icon.png",
       "identity": null,
-      "artifactName": "VoidPatrol-${version}-mac.${ext}"
+      "artifactName": "VoidPatrol-${version}-mac-${arch}.${ext}"
     },
     "dmg": {
       "title": "Void Patrol"

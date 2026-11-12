@@ -18,7 +18,8 @@ https://github.com/huntermixhunter/void-patrol/releases/latest
 | --- | --- | --- |
 | Windows | `VoidPatrol-Setup-<version>.exe` | Run it. It installs in seconds with no admin rights, adds Desktop and Start menu shortcuts, and starts the game. |
 | Windows, no install | `VoidPatrol-<version>-Portable.exe` | Save it anywhere and double-click. |
-| Mac | `VoidPatrol-<version>-mac.dmg` | Drag Void Patrol into Applications. |
+| Mac (M1 or newer) | `VoidPatrol-<version>-mac-arm64.dmg` | Drag Void Patrol into Applications. |
+| Mac (Intel) | `VoidPatrol-<version>-mac-x64.dmg` | Drag Void Patrol into Applications. |
 | Linux | `VoidPatrol-<version>-linux.AppImage` | Mark it executable and run it. |
 
 The builds are not code-signed, so the first launch asks for one extra click:
